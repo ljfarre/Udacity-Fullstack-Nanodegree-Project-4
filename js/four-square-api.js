@@ -6,7 +6,6 @@ Version: 1.0
 Created for: Udacity Fullstack Nanodegree
 Description: Adds FourSquare course data asynchronously to map infowindow using
 jQuery ajax getJSON method.*/
-'use strict';
 
 //Adds Foursquare course data to the courseInfoWindow for ech course marker when
 //called from the addCourseMarkerAnimationInfo function.

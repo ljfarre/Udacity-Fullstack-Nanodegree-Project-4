@@ -5,7 +5,6 @@ Release Date: 7/27/17
 Version: 1.0
 Created for: Udacity Fullstack Nanodegree
 Description: Contains the model data for lee's Monterey Golf Map*/
-'use strict';
 
 var golfCourses = [{
 	"name": "Pebble Beach Golf Links",

@@ -7,7 +7,6 @@ Created for: Udacity Fullstack Nanodegree
 Description: Creates google map for the golf course app and creates markers
 for the map. It also animates the markers and populates two info windows for the
 markers with FourSquare and Weather Underground data.*/
-'use strict';
 
 var map, courseInfoWindow, weatherInfoWindow, streetViewImage;
 var courseMarkerArray = [];

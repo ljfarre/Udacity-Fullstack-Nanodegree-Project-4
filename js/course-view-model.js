@@ -5,7 +5,6 @@ Release Date: 7/27/17
 Version: 1.0
 Created for: Udacity Fullstack Nanodegree
 Description: Provides the Knockout view model for the golf course app.*/
-'use strict';
 
 //Defines view model function and ko obvservable variables for the golf app.
 var ViewModel = function() {

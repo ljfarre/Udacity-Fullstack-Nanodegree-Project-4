@@ -71,7 +71,7 @@ var createCourseMarkers = function(map, courseList) {
 			index: i
 		});
     //Sets courseMarker icon orange by default.
-		courseMarker.setIcon('http://maps.google.com/mapfiles/ms/icons/orange-dot.png');
+		courseMarker.setIcon('https://maps.google.com/mapfiles/ms/icons/orange-dot.png');
 		courseMarkerArray.push(courseMarker);
 		addCourseMarkerAnimationInfo(map, courseMarker, course);
 	}
@@ -90,7 +90,7 @@ var addCourseMarkerAnimationInfo = function(map, courseMarker, course) {
 			courseMarker.setAnimation(null);
 		}, 1400);
     //Turns courseMarker icon from orange to green on click.
-		courseMarker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+		courseMarker.setIcon('https://maps.google.com/mapfiles/ms/icons/green-dot.png');
     //Asynchronously gets course api content and sets infowindows on click.
 		FoursquareCourseData(course);
 		WeatherUndergroundCourseData(course);

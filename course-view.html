@@ -1,0 +1,79 @@
+<!-- course-view.html
+Created By: Lee Farretta
+Project Name: Lee's Monterey Golf Map
+Release Date: 7/27/17
+Version: 1.0
+Created for: Udacity Fullstack Nanodegree
+Description: Contains html code that defines the
+DOM and view of the golf course app. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Udacity Fullstack Nanadegree Project 5</title>
+    <meta name="author" content="Lee Farretta">
+    <meta name="description" content="Lee's Monterey Golf Map">
+    <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=zocial">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- This section defines the top of the view with a refresh function and a
+    a link to Golf Now-->
+    <div class="heading-section">
+        <hr>
+            <p id="refresh-button" class="pull-right"><button type="button" class="btn btn-primary" onclick="refreshMap()">Reset Course Map</button></p>
+            <p id="golf-now-button" class="pull-right"><a class="btn btn-primary" href="https://www.golfnow.com/tee-times/search#radius=10&latitude=36.60024&longitude=-121.89468&sortby=Facilities.Distance.0&date=today&ratetype=all&timemin=10&timemax=42&view=Course&qc=GeoLocation">Golf Now Tee-Times</a></p>
+            <header id="map-title"><h3>Lee's Monterey Golf Map</h3></header>
+        <hr>
+    </div>
+
+    <!-- This section creates the map and the searchable list of courses for the golf
+    map app.  It is also where the data bindings for the ko view model are.-->
+    <div id="searchable-map-section" class="row">
+        <div id="map" class="col-xs-12 col-md-12"></div>
+        <div id="course-list" class="col-xs-12 col-md-12">
+            <form class="search-form" method="get">
+                <input class ="search-bar" type="text" placeholder="Course Search" data-bind="textInput: userSearchString">
+            </form>
+            <div data-bind="foreach: courseList">
+                <button type="button" class="btn-xsm btn-primary" id="course" data-bind="text: name, click: $parent.courseMarkerAnimation"></button>
+                <p><a data-bind="attr: { href: yelpURL }" class="yelp-link">Yelp this course!!<img src="images/yelp-icon.png" alt="Yelp Link"></a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- This section defines the footer section of the view including some standard
+    external links.-->
+    <div class="footer-section">
+        <div class="footer">
+            <hr>
+            <footer class="map-footer">
+                <p Class="footer-note">Put together for golf enthusiasts by Lee Farretta (Powered by Google, Foursquare, Weather Underground, Yelp and Golf Now)</p>
+                <div id="social">
+                    <a href="https://twitter.com/home?status=https://github.com/udacity/responsive-images" class="zocial-twitter">Twitter</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/udacity/responsive-images" class="zocial-facebook">Facebook</a>
+                    <a href="https://plus.google.com/share?url=https://github.com/udacity/responsive-images" class="zocial-googleplus">Google+</a>
+                    <a href="http://digg.com/submit?phase=2&url=https%3A%2F%2Fgithub.com%2Fudacity%2Fresponsive-images&title=Udacity%20nano%20course%3A%20Responsive%20Images&bodytext=Responsive%20images%20for%20your%20sites%20and%20web%20apps&topic=tech_news" class="zocial-digg">Digg</a>
+                </div>
+            </footer>
+            <hr>
+        </div>
+    </div>
+
+    <!-- The required custom and standard js modules are loaded here.-->
+    <script> function refreshMap() {location.reload();}</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/course-data-model.js"></script>
+    <script src="js/google-maps-api.js"></script>
+    <script src="js/four-square-api.js"></script>
+    <script src="js/weather-underground-api.js"></script>
+    <script src="js/course-view-model.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM48rdqHUOp2yIErJTxDFw_IDi6fTMMHI&callback=initGolfMap" onerror="googleError()"></script>
+</body>
+</html>

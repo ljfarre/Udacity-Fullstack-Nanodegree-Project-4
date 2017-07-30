@@ -5,7 +5,7 @@ Pacific Grove, Carmel by the Sea and the Carmel Valley.  While not all the
 courses in the geographic area are listed, most of the top public and private
 courses are featured; including the top picks in the Del Monte forest within
 the seventeen mile drive. The following URL should now take you to Lee's Monterey
-Golf Map: https://rawgit.com/ljfarre/Udacity-Fullstack-Nanodegree-Project-4/master/course-view.html
+Golf Map: [Launch Map](https://rawgit.com/ljfarre/Udacity-Fullstack-Nanodegree-Project-4/master/course-view.html)
 
 ## Table of Contents
 1. Introduction

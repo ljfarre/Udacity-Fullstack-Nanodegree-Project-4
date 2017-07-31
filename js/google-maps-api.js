@@ -47,7 +47,7 @@ var initGolfMap = function() {
 		maxWidth: 550
 	});
 	weatherInfoWindow = new google.maps.InfoWindow({
-		maxWidth: 300
+		maxWidth: 350
 	});
 
 	//Passes the new map and golf course data model to the createCourseMarker function.
@@ -80,8 +80,14 @@ var createCourseMarkers = function(map, courseList) {
 var addCourseMarkerAnimationInfo = function(map, courseMarker, course) {
 	courseMarker.addListener('click', function() {
     //Offsets courseMarker from center so that infowindows appear centered.
-    var lat = courseMarker.getPosition().lat() + .04;
-    var lng = courseMarker.getPosition().lng();
+		var windowSize = window.matchMedia("(max-height: 732px)");
+		if (windowSize.matches) {
+			var lat = courseMarker.getPosition().lat() + .07;
+			var lng = courseMarker.getPosition().lng();
+		} else {
+			var lat = courseMarker.getPosition().lat() + .04;
+			var lng = courseMarker.getPosition().lng();
+		}
     map.setCenter({lat: lat, lng: lng});
     //Bounces courseMarker on click.
 		courseMarker.setAnimation(google.maps.Animation.BOUNCE);

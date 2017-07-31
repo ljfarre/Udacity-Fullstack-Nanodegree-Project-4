@@ -291,13 +291,13 @@ h6 {
     	width: 85%;
     	height: 100%;
       margin-right: 55px;
+      overflow: scroll;
 	}
   .btn {
-    max-width: 140px;
-    min-width: 140px;
-  }
-  #golf-now-button {
-    visibility: hidden;
+    max-width: 160px;
+    min-width: 160px;
+    margin-right: 25px;
+    margin-left: 0px;
   }
 }
 

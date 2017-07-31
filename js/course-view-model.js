@@ -26,21 +26,19 @@ var ViewModel = function() {
 		if (searchString !== '') {
 			//Clears courseList observable array.
 			self.courseList.removeAll();
+			hideCourseMarkers(map);
 			//Goes through each course in the golfCourses data model and compares its
 			//name to the user input in the search bar.
 			for (var i = 0; i < golfCourses.length; i++) {
 				self.courseData = golfCourses[i];
 				var courseName = self.courseData.name;
 					//If search string matches any part of the course name, the course name is
-					//added to the filtered list of coures.
+					//added to the filtered list of coures and the courseMarker is made visible.
 					if (courseName.toLowerCase().indexOf(searchString.toLowerCase()) !== -1) {
 						self.courseList.push(self.courseData);
+						courseMarkerArray[i].setVisible(true);
 					}
 			};
-			//Clears course markers from google maps and adds the new filtered courseMarker
-			//array based on the search results.
-			deleteCourseMarkers();
-			createCourseMarkers(map, self.courseList());
 		} else {
 			//If searchString is blank, courseList array is cleared and loaded with
 			//all golf course objects from tthe golfCourses data model.
@@ -49,9 +47,8 @@ var ViewModel = function() {
 				self.courseData = golfCourses[i];
 				self.courseList.push(self.courseData);
 			}
-			//Removes courseMarkers from course map and refreshes them.
-			deleteCourseMarkers();
-			createCourseMarkers(map, self.courseList());
+			//Makes all course markers visible.
+			showCourseMarkers(map);
 		}
 	});
 
@@ -60,6 +57,12 @@ var ViewModel = function() {
 	self.courseMarkerAnimation = function(courseMarker) {
 		triggerCourseMarkerAnimation(map, courseMarkerArray[courseMarker.index]);
 	};
+
+	//Resets map when refresh  map button is clicked.
+	self.refreshMap = function() {
+		location.reload();
+	};
+
 };
 
 //Applies bindings to the golfCourseViewModel.

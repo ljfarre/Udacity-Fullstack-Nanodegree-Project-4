@@ -10,6 +10,7 @@ jQuery ajax getJSON method.*/
 //Adds Foursquare course data to the courseInfoWindow for ech course marker when
 //called from the addCourseMarkerAnimationInfo function.
 var FoursquareCourseData = function(course) {
+	courseInfoWindow.setContent('');
 	var url = 'https://api.foursquare.com/v2/venues/';
 	var foursquareCourseId = course.fourSquareID;
 	var clientId = '?client_id=VQFFQ0I110JADCYTWE2OJ542EAUDRXPICD0VHVZDJNMTSDJE';

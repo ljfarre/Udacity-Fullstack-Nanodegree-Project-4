@@ -105,19 +105,22 @@ var addCourseMarkersToMap = function(map) {
 	}
 };
 
+//Hides markers on the golf course map using Google Maps api setVisible module.
+var hideCourseMarkers = function(map) {
+	for (var i = 0; i < courseMarkerArray.length; i++) {
+		courseMarkerArray[i].setVisible(false);
+	}
+};
+
+//Show all markers on the golf course map using Google Maps api setVisible module.
+var showCourseMarkers = function(map) {
+	for (var i = 0; i < courseMarkerArray.length; i++) {
+		courseMarkerArray[i].setVisible(true);
+	}
+};
+
 //Triggers animation and twp info windows for golf course marker when course marker
 //is clicked.
 var triggerCourseMarkerAnimation = function(map, courseMarker) {
 	google.maps.event.trigger(courseMarker, 'click');
-};
-
-//Removes course markers from golf course map, but keeps them in the courseMarkerArray.
-var setCourseMarkersToNull = function() {
-	addCourseMarkersToMap(null);
-};
-
-// Deletes all course markers in the courseMarkerArray by removing all references to them.
-var deleteCourseMarkers = function() {
-	setCourseMarkersToNull();
-	courseMarkerArray = [];
 };

@@ -11,6 +11,7 @@ jQuery ajax getJSON method.*/
 //Adds Weather Underground data to the weatherInfoWindow for ech course marker when
 //called from the addCourseMarkerAnimationInfo function.
 var WeatherUndergroundCourseData = function(course) {
+	weatherInfoWindow.setContent('');
 	var url = 'https://api.wunderground.com/api/';
 	var token = 'e5ebaa6686b36615';
 	var searchType = '/conditions/forecast/q/';

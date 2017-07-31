@@ -21,7 +21,7 @@ var golfCourses = [{
 	'courseIndex': 2,
 	"latlng": [36.583815, -121.955807]
 }, {
-	"name": "Poopy Hills Golf Course",
+	"name": "Poppy Hills Golf Course",
 	'fourSquareID': '4acf4f26f964a52012d320e3',
 	'yelpID': 'poppy-hills-golf-course-pebble-beach',
 	'yelpURL': 'https://www.yelp.com/biz/poppy-hills-golf-course-pebble-beach?adjust_creative=MlCgz56l1fDAiWcz9v_vNw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=MlCgz56l1fDAiWcz9v_vNw',

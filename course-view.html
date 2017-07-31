@@ -25,7 +25,7 @@ DOM and view of the golf course app. -->
     a link to Golf Now-->
     <div class="heading-section">
         <hr>
-            <p id="refresh-button" class="pull-right"><button type="button" class="btn btn-primary" onclick="refreshMap()">Reset Course Map</button></p>
+            <button type="button" class="btn btn-primary pull-right" data-bind="click: refreshMap">Reset Course Map</button>
             <p id="golf-now-button" class="pull-right"><a class="btn btn-primary" href="https://www.golfnow.com/tee-times/search#radius=10&latitude=36.60024&longitude=-121.89468&sortby=Facilities.Distance.0&date=today&ratetype=all&timemin=10&timemax=42&view=Course&qc=GeoLocation">Golf Now Tee-Times</a></p>
             <header id="map-title"><h3>Lee's Monterey Golf Map</h3></header>
         <hr>
@@ -65,7 +65,6 @@ DOM and view of the golf course app. -->
     </div>
 
     <!-- The required custom and standard js modules are loaded here.-->
-    <script> function refreshMap() {location.reload();}</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
